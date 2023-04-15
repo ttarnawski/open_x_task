@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network</title>
+</head>
+<body>
+    <form action="/run_nn" method="POST">
+        <input type="text" name="layer1" id="layer1">
+        <label for="layer1">Layer 1 neurons</label><br>
+        <input type="text" name="layer2" id="layer2">
+        <label for="layer2">Layer 2 neurons</label><br>
+        <input type="text" name="dropout" id="dropout">
+        <label for="dropout">Dropout value</label><br>
+        <input type="text" name="learning_rate" id="learning_rate">
+        <label for="learning_rate">Learning rate</label><br>
+        <input type="text" name="epochs" id="epochs">
+        <label for="epochs">Epochs</label><br>
+        <input type="submit" value="Run algorithm">
+    </form>
+</body>
