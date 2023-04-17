@@ -2,6 +2,7 @@ from pandas import read_csv
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 import keras
+from keras.wrappers.scikit_learn import KerasClassifier
 from sklearn.model_selection import RandomizedSearchCV
 import matplotlib.pyplot as plt
 from ml_models import decision_tree_classifier, logistic_regression, create_nn_model_eval, knn
@@ -78,7 +79,7 @@ class ModelsEvaluation():
                                         'dropout': [0.2, 0.3, 0.4],
                                         'learning_rate': [0.001, 0.01, 0.1],
                                                             }):
-        model = keras.wrappers.scikit_learn.KerasClassifier(build_fn=create_nn_model_eval, verbose=0)
+        model = KerasClassifier(build_fn=create_nn_model_eval, verbose=0)
 
         # choose hyperparameters randomly
         search = RandomizedSearchCV(model, param_distributions, n_iter=10, cv=3)
